@@ -17,18 +17,16 @@ const App = () => {
             setError(true);
             setLoading(false);
          }
-         console.log(res);
       }
       fetchEmojis();
    }, []);
 
-   console.log("loading ?", loading);
-   console.log("error ?", error);
-   console.log("emojisData ?", emojisData);
-
    return (
       <div>
          <h1>Hello World!</h1>
+         {loading && <p>Loading....</p>}
+         {error && <p>Ooopsss....</p>}
+         {emojisData.length > 0 && <p>Emojis data sukses!</p>}
       </div>
    );
 };
