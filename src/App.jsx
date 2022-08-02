@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Navbar, Container, Empty } from "./components";
+import { Navbar, Container, Empty, Emojis } from "./components";
 const App = () => {
    const [emojisData, setEmojisData] = useState([]);
    const [loading, setLoading] = useState(false);
@@ -29,7 +29,7 @@ const App = () => {
             <h1>Hello World!</h1>
             {loading && <Empty text="Loading..." />}
             {error && <Empty text="Ooopsss...." />}
-            {emojisData.length > 0 && <p>Emojis data sukses!</p>}
+            {emojisData.length > 0 && <Emojis emojisData={emojisData} />}
          </Container>
       </>
    );
