@@ -15,17 +15,15 @@ const Emojis = ({ emojisData, searchText }) => {
       );
    }, [emojisData, searchText]);
 
-   if (filteredEmojis.length > 0) {
-      return (
-         <div className={styles.emojisGrid}>
-            {filteredEmojis.map((data, index) => (
-               <EmojiBox key={index} title={data.title} symbol={data.symbol} />
-            ))}
-         </div>
-      );
-   } else {
-      return <Empty text="Oops, zero finding. Let's try another keyword!" />;
-   }
+   return filteredEmojis.length > 0 ? (
+      <div className={styles.emojisGrid}>
+         {filteredEmojis.map((data, index) => (
+            <EmojiBox key={index} title={data.title} symbol={data.symbol} />
+         ))}
+      </div>
+   ) : (
+      <Empty text="Oops, zero finding. Let's try another keyword!" />
+   );
 };
 Emojis.propTypes = {
    emojisData: PropTypes.array,
