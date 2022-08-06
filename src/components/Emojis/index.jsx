@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import styles from "./Emojis.module.css";
-import { EmojiBox } from "../index";
+import { EmojiBox, Empty } from "../index";
 import { filterEmojis } from "../../utils/filterEmojis";
 
 const Emojis = ({ emojisData, searchText }) => {
@@ -14,13 +14,18 @@ const Emojis = ({ emojisData, searchText }) => {
          })
       );
    }, [emojisData, searchText]);
-   return (
-      <div className={styles.emojisGrid}>
-         {filteredEmojis.map((data, index) => (
-            <EmojiBox key={index} title={data.title} symbol={data.symbol} />
-         ))}
-      </div>
-   );
+
+   if (filteredEmojis.length > 0) {
+      return (
+         <div className={styles.emojisGrid}>
+            {filteredEmojis.map((data, index) => (
+               <EmojiBox key={index} title={data.title} symbol={data.symbol} />
+            ))}
+         </div>
+      );
+   } else {
+      return <Empty text="Oops, zero finding. Let's try another keyword!" />;
+   }
 };
 Emojis.propTypes = {
    emojisData: PropTypes.array,
