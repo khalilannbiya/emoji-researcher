@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Navbar, Container, Empty, Emojis } from "./components";
+import { Navbar, Container, Empty, Emojis, Input } from "./components";
 const App = () => {
    const [emojisData, setEmojisData] = useState([]);
    const [loading, setLoading] = useState(false);
@@ -26,7 +26,7 @@ const App = () => {
       <>
          <Navbar />
          <Container>
-            <h1>Hello World!</h1>
+            <Input onChange={} value={} />
             {loading && <Empty text="Loading..." />}
             {error && <Empty text="Ooopsss...." />}
             {emojisData.length > 0 && <Emojis emojisData={emojisData} />}
