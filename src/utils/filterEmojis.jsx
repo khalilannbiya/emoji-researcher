@@ -4,7 +4,7 @@ export const filterEmojis = ({ emojisData, searchText = "", maxResults = 20 }) =
          return true;
       }
 
-      if (emoji.keyword.includes(searchText.toLowerCase())) {
+      if (emoji.keywords.includes(searchText.toLowerCase())) {
          return true;
       }
 
