@@ -3,7 +3,7 @@
 Create project Emoji Researcher for learn
 ## Demo
 
-[Demo](https://khalilannbiya.github.io/personal-notes/)
+[Demo](https://khalilannbiya.github.io/emoji-researcher/)
 
 
 ## Tech Stack
